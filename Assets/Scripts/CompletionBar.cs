@@ -13,14 +13,6 @@ public class CompletionBar : MonoBehaviour
         ResetBar();
     }
 
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            IncreaseBar();
-        }
-    }
-
     // reset the bar to 0
     public void ResetBar()
     {
@@ -28,19 +20,19 @@ public class CompletionBar : MonoBehaviour
     }
 
     // increase the health bar
-    public void IncreaseBar()
+    // returns true if the bar is full
+    public bool IncreaseBar()
     {
         Vector3 currentScale = bar.GetComponent<Transform>().localScale;
         bar.GetComponent<Transform>().localScale = new Vector3(currentScale.x+percentToIncrement/100, bar.GetComponent<Transform>().localScale.y, 1);
 
         if(bar.GetComponent<Transform>().localScale.x >= 1)
-            ResetAndCloseBar();
-    }
-
-    // reset and close  the bar
-    public void ResetAndCloseBar()
-    {
-        ResetBar();
-        gameObject.SetActive(false);
+        {
+            ResetBar();
+            return true;
+        }
+        else
+            return false;
+            
     }
 }
