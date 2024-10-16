@@ -25,6 +25,9 @@ public class PlayerControls : MonoBehaviour
 
     public float moveSpeed = 2f;
 
+    // Completion bar
+    public CompletionBar completionBar;
+
 
 
 
@@ -84,10 +87,25 @@ public class PlayerControls : MonoBehaviour
 
         Debug.Log("Dug " + currentDigProgress + " %");
 
+        // Visual update of the bar
+        if (completionBar != null) 
+        {
+            bool isBarFull = completionBar.IncreaseBar();
+            if (isBarFull)
+            {
+                MoveGrave();
+            }
+        }
+
         // Move to next gravesite
         if (currentDigProgress > 100f)
         {
             Debug.Log("Grave complete");
+
+            if (completionBar != null)
+            {
+                completionBar.ResetBar();
+            }
             MoveGrave();
         }
         isDigging = false;
