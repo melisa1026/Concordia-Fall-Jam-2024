@@ -92,9 +92,9 @@ public class Popup : MonoBehaviour
 
     public void Update()
     {
-        // if(Input.GetMouseButtonDown(0))
-        // {
-        //     popup();
-        // }
+        if(Input.GetMouseButtonDown(0))
+        {
+            popup();
+        }
     }
 }
