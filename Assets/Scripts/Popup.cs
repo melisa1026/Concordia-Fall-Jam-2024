@@ -54,7 +54,6 @@ public class Popup : MonoBehaviour
                 options = rightLegArrays;
                 break; 
         }
-        partCount++;
 
         if(options != null)
         {
@@ -64,9 +63,14 @@ public class Popup : MonoBehaviour
             popupSprite = options[1][randomValue];
             popupObject.GetComponent<SpriteRenderer>().sprite = popupSprite;
 
+            // save the choice
+            saveChosenItem(randomValue);
+
             // make it pop!
             StartCoroutine(popupIE());
             
+            // next body part
+            partCount++;
         }
     }
 
@@ -87,7 +91,31 @@ public class Popup : MonoBehaviour
         popupObject.GetComponent<Transform>().DOScale(0.01f, 0.2f);
         yield return new WaitForSeconds(0.2f);
         popupObject.SetActive(false);
+    }
 
+    public void saveChosenItem(int randomValue)
+    {
+        switch(partCount) 
+        {
+            case 0:
+                ChosenItems.rightArm = rightArmArrays[0][randomValue];
+                break;
+            case 1:
+                ChosenItems.leftArm = leftArmArrays[0][randomValue];
+                break;
+            case 2:
+                ChosenItems.torso = torsoArrays[0][randomValue];
+                break;
+            case 3:
+                ChosenItems.leftArm = leftArmArrays[0][randomValue];
+                break;
+            case 4:
+                ChosenItems.head = headArrays[0][randomValue];
+                break;
+            case 5:
+                ChosenItems.rightLeg = rightLegArrays[0][randomValue];
+                break; 
+        }
     }
 
     public void Update()
