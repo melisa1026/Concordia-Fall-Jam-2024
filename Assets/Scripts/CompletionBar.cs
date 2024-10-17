@@ -35,4 +35,12 @@ public class CompletionBar : MonoBehaviour
             return false;
             
     }
+
+    public void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            IncreaseBar();
+        }
+    }
 }
