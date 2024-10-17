@@ -10,7 +10,10 @@ public class PlayerControls : MonoBehaviour
     // Hidding
     public int normalSortingOrder = 7; // normal layer of character
     public int behindSortingOrder = 5; // layer behind the gravestones
-    private bool isHiding = false;
+    public static bool isHiding = false;
+
+    // walking
+    public static bool isWalking = false;
 
     // Digging
     public float diggingIncrement = 10f;
@@ -55,7 +58,7 @@ public class PlayerControls : MonoBehaviour
         HideGrave();
 
         //  Checks is pressing D 
-        if (Input.GetKeyDown(KeyCode.D) && currentStone != null && !isDigging && !isHiding)
+        if (Input.GetKeyDown(KeyCode.D) && currentStone != null && !isDigging && !isHiding && !isWalking)
         {
             // Start the digging
             DigGrave();
@@ -66,7 +69,7 @@ public class PlayerControls : MonoBehaviour
     // Method for hide
     private void HideGrave()
     {
-        if (Input.GetKey(KeyCode.H))
+        if (Input.GetKey(KeyCode.H) && !isWalking)
         {
             spriteRenderer.sortingOrder = behindSortingOrder;
             isHiding = true;
@@ -138,13 +141,14 @@ public class PlayerControls : MonoBehaviour
     // Movement of player
     IEnumerator MoveToPosition(Vector2 pos)
     {
+        isWalking = true;
         while (Vector2.Distance(transform.position, pos) > 0.1f)
         {
             // Move character smoothly to the target position
             transform.position = Vector2.MoveTowards(transform.position, pos, moveSpeed * Time.deltaTime);
             yield return null;
-
         }
+        isWalking = false;
     }
 
     // Detect area
