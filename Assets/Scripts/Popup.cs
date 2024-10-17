@@ -118,11 +118,11 @@ public class Popup : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            popup();
-        }
-    }
+    // public void Update()
+    // {
+    //     if(Input.GetMouseButtonDown(0))
+    //     {
+    //         popup();
+    //     }
+    // }
 }
