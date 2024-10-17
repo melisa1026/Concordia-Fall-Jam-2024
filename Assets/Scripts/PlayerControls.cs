@@ -159,7 +159,7 @@ public class PlayerControls : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Gravestone"))
+        if (other.CompareTag("For some reason this fixes it"))
         {
             Debug.Log("Exited headstone");
             currentStone = null;
