@@ -8,7 +8,7 @@ using DG.Tweening;
 public class Spotter : MonoBehaviour
 {
     public static bool isWatching = false;
-    public float waitTime = 5, watchTime = 2, walkInTime = 2;
+    public float waitTime = 5, watchTime = 2, walkInTime = 2, initialWaitTime = 3;
     public GameObject inSpot, outSpot;
     private bool spotterComing = false;
     private bool wasWalking = false;
@@ -18,6 +18,12 @@ public class Spotter : MonoBehaviour
         // check where the bottom right corner of the screen is
 
         transform.position = outSpot.transform.position;
+        StartCoroutine(startTimer());
+    }
+
+    public IEnumerator startTimer()
+    {
+        yield return new WaitForSeconds(initialWaitTime);
         StartCoroutine(spyTimer());
     }
 
