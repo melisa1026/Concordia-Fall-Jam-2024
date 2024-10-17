@@ -51,6 +51,7 @@ public class Spotter : MonoBehaviour
         // if the player just started walking, make the spotter leave
         if(!wasWalking && PlayerControls.isWalking && spotterComing)
         {
+            isWatching = false;
             GetComponent<Transform>().DOMove(outSpot.transform.position, walkInTime);
         }
         wasWalking = PlayerControls.isWalking;
