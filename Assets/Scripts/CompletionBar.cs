@@ -38,9 +38,9 @@ public class CompletionBar : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            IncreaseBar();
-        }
+        // if(Input.GetMouseButtonDown(0))
+        // {
+        //     IncreaseBar();
+        // }
     }
 }
