@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Sewing.unity
+    guid: 991d5934d168fde4fa5a9ef115befb43
+  - enabled: 1
+    path: Assets/Scenes/Operating Room.unity
+    guid: 1bdb27e0200d4ed4cb133e8eaa2dc88c
   m_configObjects: {}
