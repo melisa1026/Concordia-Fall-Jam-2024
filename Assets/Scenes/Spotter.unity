@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1704914354}
   - component: {fileID: 1704914353}
+  - component: {fileID: 1704914355}
   m_Layer: 0
   m_Name: spotter
   m_TagString: Untagged
@@ -208,6 +209,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704914355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704914352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6ad810db2d7694e84130f48cc243e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 3
+  watchTime: 1.5
+  walkInTime: 2
 --- !u!1 &2036971576
 GameObject:
   m_ObjectHideFlags: 0

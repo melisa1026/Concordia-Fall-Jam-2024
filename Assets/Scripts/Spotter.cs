@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+// TODO: When moving from one grave the the other, disable the spotter
+
 public class Spotter : MonoBehaviour
 {
     public static bool isWatching = false;
