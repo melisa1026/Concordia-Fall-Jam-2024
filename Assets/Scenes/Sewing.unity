@@ -318,9 +318,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
 --- !u!1 &206162077
@@ -541,9 +545,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
 --- !u!1001 &331461125
@@ -622,9 +630,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
 --- !u!1 &426310084
@@ -943,9 +955,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
 --- !u!1 &641465744
@@ -994,7 +1010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936e3b3e61b51a64ea4466f162ba5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needlePoint: {fileID: 206162077}
+  needlePoint: {fileID: 1561186141}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 12.2
   Y: -0.7
@@ -1043,6 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
+  needle: {fileID: 0}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -1355,9 +1373,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
 --- !u!4 &1019377794 stripped
@@ -1708,7 +1730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936e3b3e61b51a64ea4466f162ba5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needlePoint: {fileID: 206162077}
+  needlePoint: {fileID: 1561186141}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 12.2
   Y: -0.7
@@ -1756,6 +1779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
+  needle: {fileID: 0}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -1772,6 +1796,7 @@ GameObject:
   - component: {fileID: 1561186144}
   - component: {fileID: 1561186145}
   - component: {fileID: 1561186146}
+  - component: {fileID: 1561186147}
   m_Layer: 0
   m_Name: Needle tip
   m_TagString: Untagged
@@ -1834,7 +1859,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 0}
   m_FlipX: 0
@@ -1933,7 +1958,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -1945,7 +1970,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.052633286
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1981,7 +2006,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -1992,6 +2017,20 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &1561186147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561186141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59abee99940ae41b61be91a4632962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needlePoint: {fileID: 1561186141}
+  minDistance: 0.1
 --- !u!1 &1624815021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936e3b3e61b51a64ea4466f162ba5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needlePoint: {fileID: 206162077}
+  needlePoint: {fileID: 1561186141}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 42.1
   Y: -8.9
@@ -2318,6 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
+  needle: {fileID: 0}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -2562,9 +2603,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
 --- !u!1 &2141657150
@@ -2613,7 +2658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936e3b3e61b51a64ea4466f162ba5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needlePoint: {fileID: 206162077}
+  needlePoint: {fileID: 1561186141}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 42.1
   Y: -8.9
@@ -2684,6 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
+  needle: {fileID: 0}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -2763,8 +2810,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1975721927}
     - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
-      propertyPath: needlePoint
+      propertyPath: needle
       value: 
       objectReference: {fileID: 206162077}
+    - target: {fileID: 2969541458932167415, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}
+      propertyPath: needlePoint
+      value: 
+      objectReference: {fileID: 1561186141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0ac68a7e3481342a493d5eadc53561, type: 3}

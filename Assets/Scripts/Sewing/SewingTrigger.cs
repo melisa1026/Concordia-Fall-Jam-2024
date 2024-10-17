@@ -7,6 +7,7 @@ public class SewingTrigger : MonoBehaviour
     //attach to colliders
 
     public GameObject needlePoint;
+    public GameObject needle;
     public GameObject red;
     //starting coordinates for needle in level 1
     public float X;
@@ -14,7 +15,9 @@ public class SewingTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        needlePoint.transform.position = new Vector3(X, Y, 0);
+        needle.transform.position = new Vector3(X, Y, 0);
+        //clear line renderer
+        needlePoint.GetComponent<LineRenderer>().positionCount = 0;
         //red flash to indicate loss
         StartCoroutine(lost());
     }
