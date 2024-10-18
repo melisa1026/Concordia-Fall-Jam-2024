@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6208741985385790611, guid: de02ec905657bc144ae356c212d1bca4, type: 3}
       propertyPath: nextSceneName
-      value: Sewing
+      value: Assembly
       objectReference: {fileID: 0}
     - target: {fileID: 6208741985385790616, guid: de02ec905657bc144ae356c212d1bca4, type: 3}
       propertyPath: m_Name
