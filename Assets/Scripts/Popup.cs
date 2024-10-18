@@ -91,6 +91,12 @@ public class Popup : MonoBehaviour
         popupObject.GetComponent<Transform>().DOScale(0.01f, 0.2f);
         yield return new WaitForSeconds(0.2f);
         popupObject.SetActive(false);
+
+        // change scenes if all items are collected
+        if(PlayerControls.allCollected)
+        {
+            PlayerControls.ChangeScenePhase2();
+        }
     }
 
     public void saveChosenItem(int randomValue)

@@ -35,6 +35,8 @@ public class PlayerControls : MonoBehaviour
     // Pop-up Object
     public Popup popupS;
 
+    public static bool allCollected = false;
+
 
     void Start()
     {
@@ -141,7 +143,7 @@ public class PlayerControls : MonoBehaviour
         
         else
         {
-            ChangeScenePhase2();
+           allCollected = true;
         }
 
     }
@@ -183,7 +185,7 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    void ChangeScenePhase2()
+    public static void ChangeScenePhase2()
     {
         SceneManager.LoadScene("Phase II");
     }
