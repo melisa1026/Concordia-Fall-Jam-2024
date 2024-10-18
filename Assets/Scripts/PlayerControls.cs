@@ -8,7 +8,7 @@ public class PlayerControls : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     // Hidding
-    public int normalSortingOrder = 7; // normal layer of character
+    public int normalSortingOrder = 8; // normal layer of character
     public int behindSortingOrder = 5; // layer behind the gravestones
     public static bool isHiding = false;
 
@@ -31,7 +31,8 @@ public class PlayerControls : MonoBehaviour
     // Completion bar
     public CompletionBar completionBar;
 
-
+    // Pop-up Object
+    public Popup popupS;
 
 
     void Start()
@@ -96,6 +97,10 @@ public class PlayerControls : MonoBehaviour
             bool isBarFull = completionBar.IncreaseBar();
             if (isBarFull)
             {
+                if (popupS != null) 
+                {
+                    popupS.popup();
+                }
                 MoveGrave();
             }
         }
@@ -104,6 +109,11 @@ public class PlayerControls : MonoBehaviour
         if (currentDigProgress > 100f)
         {
             Debug.Log("Grave complete");
+
+            if (popupS != null)
+            {
+                popupS.popup();
+            }
 
             if (completionBar != null)
             {
