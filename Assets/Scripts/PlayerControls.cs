@@ -88,6 +88,8 @@ public class PlayerControls : MonoBehaviour
     // Method for digging action
     private void DigGrave()
     {
+        GetComponent<Animator>().Play("dig");
+
         isDigging = true;
         currentDigProgress += diggingIncrement;
 
@@ -153,7 +155,6 @@ public class PlayerControls : MonoBehaviour
     {
         isWalking = true;
 
-        GetComponent<Animator>().enabled = true;
         GetComponent<Animator>().Play("walk");
 
         while (Vector2.Distance(transform.position, new Vector2(pos.x, transform.position.y)) > 0.1f)
@@ -163,7 +164,7 @@ public class PlayerControls : MonoBehaviour
             yield return null;
         }
 
-        GetComponent<Animator>().enabled = false;
+        GetComponent<Animator>().Play("stand");
 
         isWalking = false;
     }
