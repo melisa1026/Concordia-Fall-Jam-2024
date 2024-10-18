@@ -10,7 +10,7 @@ public class Spotter : MonoBehaviour
     public static bool isWatching = false;
     public float waitTime = 5, watchTime = 2, walkInTime = 2, initialWaitTime = 3;
     public GameObject inSpot, outSpot;
-    private bool spotterComing = false;
+    public static bool spotterComing = false;
     private bool wasWalking = false;
 
     public void Start()
@@ -29,14 +29,13 @@ public class Spotter : MonoBehaviour
 
     public IEnumerator spyTimer()
     {
-        yield return new WaitForSeconds(waitTime);
-        StartCoroutine(spyComes());
-    }
+        Debug.Log("Enter");
 
-    public IEnumerator spyComes()
-    {
-        if(!PlayerControls.isWalking)
+        yield return new WaitForSeconds(waitTime);
+        
+        if(!PlayerControls.isWalking && !spotterComing)
         {
+
             spotterComing = true;
 
             GetComponent<Transform>().DOMove(inSpot.transform.position, walkInTime);
@@ -50,24 +49,31 @@ public class Spotter : MonoBehaviour
             yield return new WaitForSeconds(walkInTime);
 
             spotterComing = false;
-
-            StartCoroutine(spyTimer());
         }
         else
         {
             yield return new WaitForSeconds(1);
-            StartCoroutine(spyComes());
         }
 
+        StartCoroutine(spyTimer());
+
+        Debug.Log("Exit");
     }
+
 
     void Update()
     {
         // if the player just started walking, make the spotter leave
-        if(!wasWalking && PlayerControls.isWalking && spotterComing)
+        if(!wasWalking && PlayerControls.isWalking)
         {
             isWatching = false;
+
             GetComponent<Transform>().DOMove(outSpot.transform.position, walkInTime);
+        }
+
+        if(PlayerControls.isWalking && isWatching)
+        {
+            isWatching = false;
         }
         wasWalking = PlayerControls.isWalking;
     }

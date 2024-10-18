@@ -49,7 +49,7 @@ public class PlayerControls : MonoBehaviour
 
         if (headstones.Length > 0)
         {
-            transform.position = headstones[0].transform.position;
+            transform.position = new Vector3(headstones[0].transform.position.x , transform.position.y , transform.position.z);
         }
         headStoneIndex = 0;
     }
@@ -75,7 +75,6 @@ public class PlayerControls : MonoBehaviour
         {
             spriteRenderer.sortingOrder = behindSortingOrder;
             isHiding = true;
-            Debug.Log("Hidding!");
         }
         else
         {
@@ -90,7 +89,6 @@ public class PlayerControls : MonoBehaviour
         isDigging = true;
         currentDigProgress += diggingIncrement;
 
-        Debug.Log("Dug " + currentDigProgress + " %");
 
         // Visual update of the bar
         if (completionBar != null) 
@@ -109,7 +107,6 @@ public class PlayerControls : MonoBehaviour
         // Move to next gravesite
         if (currentDigProgress > 100f)
         {
-            Debug.Log("Grave complete");
 
             if (popupS != null)
             {
@@ -140,13 +137,11 @@ public class PlayerControls : MonoBehaviour
 
             // Reset dig progress
             currentDigProgress = 0;
-
         }
         
         else
         {
             ChangeScenePhase2();
-            Debug.Log("Mission complete");
         }
 
     }
@@ -155,12 +150,19 @@ public class PlayerControls : MonoBehaviour
     IEnumerator MoveToPosition(Vector2 pos)
     {
         isWalking = true;
-        while (Vector2.Distance(transform.position, pos) > 0.1f)
+
+        GetComponent<Animator>().enabled = true;
+        GetComponent<Animator>().Play("walk");
+
+        while (Vector2.Distance(transform.position, new Vector2(pos.x, transform.position.y)) > 0.1f)
         {
             // Move character smoothly to the target position
-            transform.position = Vector2.MoveTowards(transform.position, pos, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(pos.x, transform.position.y), moveSpeed * Time.deltaTime);
             yield return null;
         }
+
+        GetComponent<Animator>().enabled = false;
+
         isWalking = false;
     }
 
@@ -169,7 +171,6 @@ public class PlayerControls : MonoBehaviour
     {
         if (other.CompareTag("headstone"))
         {
-            Debug.Log("Entered headstone");
             currentStone = other;
         }
     }
@@ -178,14 +179,12 @@ public class PlayerControls : MonoBehaviour
     {
         if (other.CompareTag("For some reason this fixes it"))
         {
-            Debug.Log("Exited headstone");
             currentStone = null;
         }
     }
 
     void ChangeScenePhase2()
     {
-        Debug.Log("Changing Scene");
         SceneManager.LoadScene("Phase II");
     }
 }
