@@ -35,21 +35,30 @@ public class Spotter : MonoBehaviour
 
     public IEnumerator spyComes()
     {
-        spotterComing = true;
+        if(!PlayerControls.isWalking)
+        {
+            spotterComing = true;
 
-        GetComponent<Transform>().DOMove(inSpot.transform.position, walkInTime);
-        yield return new WaitForSeconds(walkInTime);
+            GetComponent<Transform>().DOMove(inSpot.transform.position, walkInTime);
+            yield return new WaitForSeconds(walkInTime);
 
-        isWatching = true;
-        yield return new WaitForSeconds(watchTime);
-        isWatching = false;
-        
-        GetComponent<Transform>().DOMove(outSpot.transform.position, walkInTime);
-        yield return new WaitForSeconds(walkInTime);
+            isWatching = true;
+            yield return new WaitForSeconds(watchTime);
+            isWatching = false;
+            
+            GetComponent<Transform>().DOMove(outSpot.transform.position, walkInTime);
+            yield return new WaitForSeconds(walkInTime);
 
-        spotterComing = false;
+            spotterComing = false;
 
-        StartCoroutine(spyTimer());
+            StartCoroutine(spyTimer());
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
+            StartCoroutine(spyComes());
+        }
+
     }
 
     void Update()
