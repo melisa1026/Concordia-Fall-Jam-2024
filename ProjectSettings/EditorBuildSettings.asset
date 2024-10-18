@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Phase III.unity
     guid: 0e32d15d13046b145b344ac9276c7d6e
+  - enabled: 1
+    path: Assets/Scenes/Assembly.unity
+    guid: 24b994581dc711e419eb755e7471c2d0
   m_configObjects: {}
