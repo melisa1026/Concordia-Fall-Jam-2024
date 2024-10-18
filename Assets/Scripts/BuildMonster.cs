@@ -29,7 +29,7 @@ public class BuildMonster : MonoBehaviour
 
     IEnumerator openLab()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         build();
     }
 
