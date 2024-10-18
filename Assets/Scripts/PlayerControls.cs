@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -141,8 +142,10 @@ public class PlayerControls : MonoBehaviour
             currentDigProgress = 0;
 
         }
+        
         else
         {
+            ChangeScenePhase2();
             Debug.Log("Mission complete");
         }
 
@@ -178,5 +181,11 @@ public class PlayerControls : MonoBehaviour
             Debug.Log("Exited headstone");
             currentStone = null;
         }
+    }
+
+    void ChangeScenePhase2()
+    {
+        Debug.Log("Changing Scene");
+        SceneManager.LoadScene("Phase II");
     }
 }
