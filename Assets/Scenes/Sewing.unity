@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
-  needle: {fileID: 0}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -1985,7 +1985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
-  needle: {fileID: 0}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
-  needle: {fileID: 0}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needlePoint: {fileID: 206162077}
-  needle: {fileID: 0}
+  needle: {fileID: 206162077}
   red: {fileID: 1975721927}
   X: 11
   Y: -0.5

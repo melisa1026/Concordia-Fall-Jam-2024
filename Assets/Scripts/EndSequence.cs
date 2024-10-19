@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndSequence : MonoBehaviour
 {
     public GameObject lightningTower, blackScreen;
     public Sprite darkTower, lightTower;
+    public GameObject leftEye, rightEye;
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +48,26 @@ public class EndSequence : MonoBehaviour
         blackScreen.SetActive(false);
         yield return new WaitForSeconds(0.1f);
         blackScreen.SetActive(true);
+        yield return new WaitForSeconds(1);
 
-        // have the eyes open in the light
+        // have the eyes open in the light (indexes 1 and 3 only have one eye)
+        if(ChosenItems.getItem(1) == 1)
+        {
+            leftEye.GetComponent<Animator>().enabled = true;
+        }
+        else if(ChosenItems.getItem(1) == 3)
+        {
+            rightEye.GetComponent<Animator>().enabled = true;
+        }
+        else
+        {
+            leftEye.GetComponent<Animator>().enabled = true;
+            rightEye.GetComponent<Animator>().enabled = true;
+        }
+
+        yield return new WaitForSeconds(1.5f);
 
         // go to the win screen
+        SceneManager.LoadScene("Win");
     }
 }

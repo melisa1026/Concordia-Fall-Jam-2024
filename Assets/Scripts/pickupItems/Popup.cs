@@ -94,6 +94,6 @@ public class Popup : MonoBehaviour
 
     public void saveChosenItem(int randomValue)
     {
-        ChosenItems.chosenItems[bodyPart] = randomValue;
+        ChosenItems.setItem(bodyPart, randomValue);
     }
 }

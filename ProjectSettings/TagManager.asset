@@ -51,9 +51,3 @@ TagManager:
   - name: Foreground
     uniqueID: 3540961097
     locked: 0
-  - name: headstone
-    uniqueID: 2858293235
-    locked: 0
-  - name: For some reason this fixes it
-    uniqueID: 4129127891
-    locked: 0
