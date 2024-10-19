@@ -9,7 +9,7 @@ public class ChosenItems : MonoBehaviour
 
     void Start()
     {
-        chosenItems = new int[6];
+        chosenItems = new int[6] {0, 0, 0, 0, 0, 0};
     }
 
 }

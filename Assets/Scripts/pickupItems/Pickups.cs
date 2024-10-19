@@ -19,9 +19,13 @@ public class Pickups : MonoBehaviour
 
     // format: {{cuncentered, cenetered}, {cuncentered, cenetered}}
     public static List<List<List<Sprite>>> items;
+    public static bool isInitialized = false;
 
     void Start()
     {
+        if(torso != null)
+            isInitialized = true;
+
         items = new List<List<List<Sprite>>>();
         items.Add(new List<List<Sprite>> { torso, torsoCentered });
         items.Add(new List<List<Sprite>> { head, headCentered });
@@ -33,16 +37,25 @@ public class Pickups : MonoBehaviour
 
     public static Sprite getNonCenteredPart(int bodyPart, int index)
     {
-        return items[bodyPart][0][index];
+        if(isInitialized)
+            return items[bodyPart][0][index];
+        else 
+            return null;
     }
     
     public static Sprite getCenteredPart(int bodyPart, int index)
     {
-        return items[bodyPart][1][index];
+        if(isInitialized)
+            return items[bodyPart][1][index];
+        else 
+            return null;
     }
 
     public static int getPartArrayLength(int bodyPart)
     {
-        return items[bodyPart][0].Count;
+        if(isInitialized)
+            return items[bodyPart][0].Count;
+        else
+            return 0;
     }
 }
