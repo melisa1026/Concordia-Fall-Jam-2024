@@ -81,8 +81,14 @@ public class PlayerControls : MonoBehaviour
     // Method for hide
     private void HideGrave()
     {
+        if (Input.GetKeyUp(KeyCode.H) && !isWalking)
+        {
+            GetComponent<Animator>().Play("stand");
+        }
+        
         if (Input.GetKey(KeyCode.H) && !isWalking)
         {
+            GetComponent<Animator>().Play("hide");
             spriteRenderer.sortingOrder = behindSortingOrder;
             isHiding = true;
         }
