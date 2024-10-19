@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class ChosenItems : MonoBehaviour
 {
-    public static Sprite head, torso, rightArm, leftArm, rightLeg, leftLeg;
+
+    public static int[] chosenItems;
+
+    void Start()
+    {
+        chosenItems = new int[6];
+    }
+
 }

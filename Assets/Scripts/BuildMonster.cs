@@ -5,24 +5,19 @@ using DG.Tweening;
 
 public class BuildMonster : MonoBehaviour
 {
-    public GameObject torso;
-    public GameObject[] parts;  // order: head, torso, right arm, left arm, right leg, left leg
+    public GameObject torso = null;
+    public GameObject[] parts;  // order: torso, head, right arm, left arm, right leg, left leg
+    public bool assemble = true;
 
     void Start()
     {
-        // TODO: Change the bpdy part sprites to the ones the player chose
-        if(ChosenItems.head != null)
-            parts[0].GetComponent<SpriteRenderer>().sprite = ChosenItems.head;
-        if(ChosenItems.torso != null)
-            parts[1].GetComponent<SpriteRenderer>().sprite = ChosenItems.torso;
-        if(ChosenItems.rightArm != null)
-            parts[2].GetComponent<SpriteRenderer>().sprite = ChosenItems.rightArm;
-        if(ChosenItems.leftArm != null)
-            parts[3].GetComponent<SpriteRenderer>().sprite = ChosenItems.leftArm;
-        if(ChosenItems.rightLeg != null)
-            parts[4].GetComponent<SpriteRenderer>().sprite = ChosenItems.rightLeg;
-        if(ChosenItems.leftLeg != null)
-            parts[5].GetComponent<SpriteRenderer>().sprite = ChosenItems.leftLeg;
+        // Change the bpdy part sprites to the ones the player chose
+        parts[0].GetComponent<SpriteRenderer>().sprite = Pickups.getNonCenteredPart(0, ChosenItems.chosenItems[0]);
+        parts[1].GetComponent<SpriteRenderer>().sprite = Pickups.getNonCenteredPart(1, ChosenItems.chosenItems[1]);
+        parts[2].GetComponent<SpriteRenderer>().sprite = Pickups.getNonCenteredPart(2, ChosenItems.chosenItems[2]);
+        parts[3].GetComponent<SpriteRenderer>().sprite = Pickups.getNonCenteredPart(3, ChosenItems.chosenItems[3]);
+        parts[4].GetComponent<SpriteRenderer>().sprite = Pickups.getNonCenteredPart(4, ChosenItems.chosenItems[4]);
+        parts[5].GetComponent<SpriteRenderer>().sprite = Pickups.getNonCenteredPart(5, ChosenItems.chosenItems[5]);
 
         StartCoroutine(openLab());
     }
@@ -30,7 +25,9 @@ public class BuildMonster : MonoBehaviour
     IEnumerator openLab()
     {
         yield return new WaitForSeconds(0.5f);
-        build();
+
+        if(assemble)
+            build();
     }
 
     public void build()
