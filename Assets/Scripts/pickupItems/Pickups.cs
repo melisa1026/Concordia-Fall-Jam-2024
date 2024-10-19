@@ -24,22 +24,24 @@ public class Pickups : MonoBehaviour
     void Start()
     {
         if(torso != null)
+        {
             isInitialized = true;
 
-        items = new List<List<List<Sprite>>>();
-        items.Add(new List<List<Sprite>> { torso, torsoCentered });
-        items.Add(new List<List<Sprite>> { head, headCentered });
-        items.Add(new List<List<Sprite>> { rightArm, rightArmCentered });
-        items.Add(new List<List<Sprite>> { leftArm, leftArmCentered });
-        items.Add(new List<List<Sprite>> { rightLeg, rightLegCentered });
-        items.Add(new List<List<Sprite>> { leftLeg, leftLegCentered });
+            items = new List<List<List<Sprite>>>();
+            items.Add(new List<List<Sprite>> { torso, torsoCentered });
+            items.Add(new List<List<Sprite>> { head, headCentered });
+            items.Add(new List<List<Sprite>> { rightArm, rightArmCentered });
+            items.Add(new List<List<Sprite>> { leftArm, leftArmCentered });
+            items.Add(new List<List<Sprite>> { rightLeg, rightLegCentered });
+            items.Add(new List<List<Sprite>> { leftLeg, leftLegCentered });
+        }
     }
 
     public static Sprite getNonCenteredPart(int bodyPart, int index)
     {
-        if(isInitialized)
-            return items[bodyPart][0][index];
-        else 
+        // if(isInitialized)
+        //     return items[bodyPart][0][index];
+        // else 
             return null;
     }
     
