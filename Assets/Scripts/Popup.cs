@@ -18,6 +18,8 @@ public class Popup : MonoBehaviour
 
     void Start()
     {
+        partCount = 0;
+
         popupObject.SetActive(false);
 
         torsoArrays = new List<Sprite[]> { torso, torsoCentered };

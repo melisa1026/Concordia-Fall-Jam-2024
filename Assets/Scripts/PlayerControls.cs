@@ -40,6 +40,14 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
+        // gameObject.tag = "headstone";
+        // gameObject.tag = "For some reason this fixes it";
+
+        allCollected = false;
+        isWalking = false;
+        isHiding = false;
+        isDigging = false;
+
         // SpriteRenderer attached to character
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -62,7 +70,7 @@ public class PlayerControls : MonoBehaviour
         HideGrave();
 
         //  Checks is pressing D 
-        if (Input.GetKeyDown(KeyCode.D) && currentStone != null && !isDigging && !isHiding && !isWalking)
+        if (Input.GetKeyDown(KeyCode.D) && !isDigging && !isHiding && !isWalking)
         {
             // Start the digging
             DigGrave();
@@ -142,7 +150,6 @@ public class PlayerControls : MonoBehaviour
             // Reset dig progress
             currentDigProgress = 0;
         }
-        
         else
         {
            allCollected = true;
@@ -169,22 +176,22 @@ public class PlayerControls : MonoBehaviour
         isWalking = false;
     }
 
-    // Detect area
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("headstone"))
-        {
-            currentStone = other;
-        }
-    }
+    // // Detect area
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("headstone"))
+    //     {
+    //         currentStone = other;
+    //     }
+    // }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("For some reason this fixes it"))
-        {
-            currentStone = null;
-        }
-    }
+    // void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("For some reason this fixes it"))
+    //     {
+    //         currentStone = null;
+    //     }
+    // }
 
     public static void ChangeScenePhase2()
     {

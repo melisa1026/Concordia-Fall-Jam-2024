@@ -7,7 +7,6 @@ public class CatchDigger : MonoBehaviour
 {
     void Update()
     {
-        Debug.Log(Spotter.isWatching + " " + !PlayerControls.isHiding + " " + !PlayerControls.isWalking + " " + Spotter.spotterComing);
         // if the spotter is watching and the digger is not hiding, he gets caught
         if(Spotter.isWatching && !PlayerControls.isHiding && !PlayerControls.isWalking)
         {

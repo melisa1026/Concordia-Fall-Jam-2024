@@ -15,6 +15,10 @@ public class Spotter : MonoBehaviour
 
     public void Start()
     {
+        wasWalking = false;
+        spotterComing = false;
+        isWatching = false;
+
         // check where the bottom right corner of the screen is
 
         transform.position = outSpot.transform.position;
@@ -29,7 +33,6 @@ public class Spotter : MonoBehaviour
 
     public IEnumerator spyTimer()
     {
-        Debug.Log("Enter");
 
         yield return new WaitForSeconds(waitTime);
         
@@ -57,7 +60,6 @@ public class Spotter : MonoBehaviour
 
         StartCoroutine(spyTimer());
 
-        Debug.Log("Exit");
     }
 
 
