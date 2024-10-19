@@ -8,7 +8,7 @@ public class animation : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene("Operating Room");
+        SceneManager.LoadScene("Phase III");
     }
 
 

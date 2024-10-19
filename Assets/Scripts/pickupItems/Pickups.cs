@@ -39,9 +39,9 @@ public class Pickups : MonoBehaviour
 
     public static Sprite getNonCenteredPart(int bodyPart, int index)
     {
-        // if(isInitialized)
-        //     return items[bodyPart][0][index];
-        // else 
+        if(isInitialized)
+            return items[bodyPart][0][index];
+        else 
             return null;
     }
     
