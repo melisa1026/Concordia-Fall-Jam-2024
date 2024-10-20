@@ -79,9 +79,9 @@ public class PlayerControls : MonoBehaviour
             // Shovel sound
             if (shovelSound != null)
             {
-                shovelSound.Play();
+                shovelSound.PlayOneShot(shovelSound.clip);
             }
-            
+
             // Start the digging
             DigGrave();
         }
