@@ -8,6 +8,7 @@ public class EndSequence : MonoBehaviour
     public GameObject lightningTower, blackScreen;
     public Sprite darkTower, lightTower;
     public GameObject leftEye, rightEye;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class EndSequence : MonoBehaviour
         // show the lightning strike
         transform.position = new Vector3(50, 0, transform.position.z);
         yield return new WaitForSeconds(1.5f);
+        audioSource.Play();
         lightningTower.GetComponent<SpriteRenderer>().sprite = lightTower;
         yield return new WaitForSeconds(0.1f);
         lightningTower.GetComponent<SpriteRenderer>().sprite = darkTower;
