@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class PlayerControls : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    public AudioSource shovelSound;
+    public AudioSource walkingSound;
+    public AudioSource hidingSound;
+    public AudioSource popUpSound;
 
     // Hidding
     public int normalSortingOrder = 8; // normal layer of character
@@ -72,6 +76,12 @@ public class PlayerControls : MonoBehaviour
         //  Checks is pressing D 
         if ((Input.GetKeyDown(KeyCode.D) || Input.GetButtonDown("DButton")) && !isDigging && !isHiding && !isWalking)
         {
+            // Shovel sound
+            if (shovelSound != null)
+            {
+                shovelSound.Play();
+            }
+            
             // Start the digging
             DigGrave();
         }
@@ -83,6 +93,7 @@ public class PlayerControls : MonoBehaviour
     {
         if ((Input.GetKeyUp(KeyCode.H) || Input.GetButtonUp("HButton")) && !isWalking)
         {
+
             GetComponent<Animator>().Play("stand");
         }
         
@@ -94,6 +105,11 @@ public class PlayerControls : MonoBehaviour
         }
         else
         {
+            // Hidding sound
+            if (hidingSound != null)
+            {
+                hidingSound.Play();
+            }
             spriteRenderer.sortingOrder = normalSortingOrder;
             isHiding = false;
         }
@@ -116,6 +132,7 @@ public class PlayerControls : MonoBehaviour
             {
                 if (popupS != null) 
                 {
+                    popUpSound.Play();
                     popupS.popup();
                 }
                 MoveGrave();
@@ -128,6 +145,7 @@ public class PlayerControls : MonoBehaviour
 
             if (popupS != null)
             {
+                popUpSound.Play();
                 popupS.popup();
             }
 
@@ -168,6 +186,12 @@ public class PlayerControls : MonoBehaviour
     {
         isWalking = true;
 
+        // walking sound
+        if (walkingSound != null && !walkingSound.isPlaying)
+        {
+            walkingSound.Play();
+        }
+
         GetComponent<Animator>().Play("walk");
 
         while (Vector2.Distance(transform.position, new Vector2(pos.x, transform.position.y)) > 0.1f)
@@ -180,6 +204,13 @@ public class PlayerControls : MonoBehaviour
         GetComponent<Animator>().Play("stand");
 
         isWalking = false;
+
+        // stop walking sound when player is not walking
+        if (walkingSound != null && walkingSound.isPlaying)
+        {
+            walkingSound.Stop();
+        }
+
     }
 
     // // Detect area
