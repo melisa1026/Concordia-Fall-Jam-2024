@@ -70,7 +70,7 @@ public class PlayerControls : MonoBehaviour
         HideGrave();
 
         //  Checks is pressing D 
-        if (Input.GetKeyDown(KeyCode.D) && !isDigging && !isHiding && !isWalking)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetButtonDown("DButton")) && !isDigging && !isHiding && !isWalking)
         {
             // Start the digging
             DigGrave();
@@ -81,12 +81,12 @@ public class PlayerControls : MonoBehaviour
     // Method for hide
     private void HideGrave()
     {
-        if (Input.GetKeyUp(KeyCode.H) && !isWalking)
+        if ((Input.GetKeyUp(KeyCode.H) || Input.GetButtonUp("HButton")) && !isWalking)
         {
             GetComponent<Animator>().Play("stand");
         }
         
-        if (Input.GetKey(KeyCode.H) && !isWalking)
+        if ((Input.GetKey(KeyCode.H) || Input.GetButton("HButton")) && !isWalking)
         {
             GetComponent<Animator>().Play("hide");
             spriteRenderer.sortingOrder = behindSortingOrder;

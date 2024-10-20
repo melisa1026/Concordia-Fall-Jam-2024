@@ -9,7 +9,7 @@ public class start : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetButtonDown("DButton"))
         {
             SceneManager.LoadScene("Phase I");
         }
