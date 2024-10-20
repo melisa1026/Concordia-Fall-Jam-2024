@@ -20,7 +20,15 @@ public class LoadCharacter : MonoBehaviour
 
         // torso
         if(Pickups.getNonCenteredPart(0, ChosenItems.getItem(0)) != null)
-            torso.GetComponent<Image>().sprite = Pickups.getNonCenteredPart(0, digits[0]);
+        {
+            // the number 010000 saves as 10000, so I replaced leading 0s with 6
+            int digit = digits[0];
+            if(digit == 6)
+                digit = 1;
+
+            torso.GetComponent<Image>().sprite = Pickups.getNonCenteredPart(0, digit);
+        }
+            
 
         // head
         if(Pickups.getNonCenteredPart(0, ChosenItems.getItem(1)) != null)

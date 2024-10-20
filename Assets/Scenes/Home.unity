@@ -764,7 +764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press D to start
+  m_text: Press D to start, H for gallery
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1bab61ed9619974087f9dbbb6da2ef0, type: 2}
   m_sharedMaterial: {fileID: 6612674480553674810, guid: f1bab61ed9619974087f9dbbb6da2ef0, type: 2}

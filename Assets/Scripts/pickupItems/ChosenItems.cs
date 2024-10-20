@@ -12,6 +12,11 @@ public class ChosenItems : MonoBehaviour
         chosenItems = new int[6] {0, 0, 0, 0, 0, 0};
     }
 
+    public static int[] getItems()
+    {
+        return chosenItems;
+    }
+
     public static int getItem(int index)
     {
         if(chosenItems == null)
