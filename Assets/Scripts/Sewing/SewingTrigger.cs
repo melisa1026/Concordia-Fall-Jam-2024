@@ -12,6 +12,7 @@ public class SewingTrigger : MonoBehaviour
     //starting coordinates for needle in level 1
     public float X;
     public float Y;
+    public AudioSource errorSound;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,6 +26,8 @@ public class SewingTrigger : MonoBehaviour
     //red flash to indicate loss
     public IEnumerator lost()
     {
+        if(errorSound != null)
+            errorSound.Play(0);
         red.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         red.SetActive(false);
