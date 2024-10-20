@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press D to dig and H to hide
+  m_text: Press D to dig and H/C to hide
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6ab8d292f941954daec71d8ef4669cf, type: 2}
   m_sharedMaterial: {fileID: -3740911447310382463, guid: f6ab8d292f941954daec71d8ef4669cf, type: 2}
@@ -4036,7 +4036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press D to dig and H to hide
+  m_text: Press D to dig and H/C to hide
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6ab8d292f941954daec71d8ef4669cf, type: 2}
   m_sharedMaterial: {fileID: -3740911447310382463, guid: f6ab8d292f941954daec71d8ef4669cf, type: 2}
