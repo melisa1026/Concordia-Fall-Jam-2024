@@ -13,6 +13,10 @@ public class start : MonoBehaviour
         {
             SceneManager.LoadScene("Phase I");
         }
+        if(Input.GetKeyDown(KeyCode.H) || Input.GetButtonDown("HButton"))
+        {
+            SceneManager.LoadScene("Gallery");
+        }
     }
 
 }
